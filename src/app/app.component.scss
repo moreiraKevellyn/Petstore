@@ -1,0 +1,25 @@
+// Arquivo css
+mat-sidenav-content {
+    min-height: 100vh;
+}
+
+mat-sidenav {
+    width: 280px;
+}
+
+mat-toolbar{
+    height: 48px;
+}
+
+.close{
+    position: absolute;
+    left: 240px;
+    top: 10px;
+    font-size: 1.1rem;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    
+}
+
