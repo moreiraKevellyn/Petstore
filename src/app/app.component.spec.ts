@@ -1,32 +1,30 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-
 import { MockComponents } from 'ng-mocks';
-import { MatSidenavModule, MatSidenavContainer, MatSidenav } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavContainer, MatSidenav } from '@angular/material/sidenav';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing'
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-
       imports: [
         RouterTestingModule
       ],
-
       declarations: [
         AppComponent,
         MockComponents(
-          MatSidenavModule,
-          MatIconModule,
-          MatToolbarModule,
+          MatSidenav,
+          MatIcon,
+          MatToolbar,
           MatSidenavContainer,
           MatSidenav
         )
       ],
-      
+
     }).compileComponents();
   });
 
