@@ -2,10 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 import { MockComponents } from 'ng-mocks';
-import { MatSidenavContainer, MatSidenav } from '@angular/material/sidenav';
+import { MatSidenavContainer, MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing'
+
 
 describe('AppComponent', () => {
 
@@ -21,7 +22,7 @@ describe('AppComponent', () => {
           MatIcon,
           MatToolbar,
           MatSidenavContainer,
-          MatSidenav
+          MatSidenavContent,
         )
       ],
 

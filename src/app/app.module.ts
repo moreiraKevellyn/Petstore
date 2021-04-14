@@ -6,19 +6,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    
-    
+    CategoriesFeaturedComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +28,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppRoutingModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule
-    
+    MatToolbarModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

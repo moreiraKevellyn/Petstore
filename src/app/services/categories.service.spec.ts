@@ -36,7 +36,7 @@ describe('CategoriesService', () => {
 
     // Vamos colocar aqui a resposta da requisição
     const categories: Array<Category> = [
-      {id: 'dasdasd', name: 'Ração', subcategories: ['ração seca'], url: '', description: ''},
+      {id: 'dasdasd', name: 'Ração', subcategories: ['ração seca'], url: '', description: '' },
       {id: 'dasdasd', name: 'Brinquedos', subcategories: ['pelucia'], url: '', description: ''}
     ]
     req.flush(categories);
