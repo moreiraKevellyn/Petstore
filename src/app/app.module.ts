@@ -13,6 +13,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 
 
@@ -21,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     DashboardComponent,
     CategoriesFeaturedComponent,
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,

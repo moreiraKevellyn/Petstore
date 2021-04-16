@@ -1,0 +1,36 @@
+    <div>
+        <mat-card class="productDestaque" role="group">
+            <img mat-card-image src="{{product.featured_image}}">
+            <mat-card-title class="name-product">
+                {{product.name}}
+            </mat-card-title>
+
+            <mat-card-content class="card-content">
+                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                    <mat-icon class="star-icon">
+                        <!--ela cheia -->
+                        <ng-container *ngIf="product.rating_stars >= star">star</ng-container>
+                        <!--meia estrela -->
+                        <ng-container *ngIf="star - product.rating_stars == 0.5">star_half</ng-container>
+                        <!--estrela vazia -->
+                        <ng-container *ngIf="star - product.rating_stars > 0.5">star_border</ng-container>
+                    </mat-icon>
+                </ng-container>
+
+                <div class="container-value">
+                    <div [ngClass]="!product.promotional_value ? 'classeA' : 'classeB'"> {{product.value | currency:
+                        "BRL"}}
+                    </div>
+
+                    <div class="classeA" *ngIf="product.promotional_value">{{product.promotional_value |
+                        currency:"BRL"}}
+                    </div>
+
+                    <div>{{productInstallment}}</div>
+
+                </div>
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>

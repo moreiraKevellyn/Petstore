@@ -11,11 +11,10 @@ describe('CategoriesFeaturedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CategoriesFeaturedComponent,
-        MockComponents(
-
-        )],
-
+      declarations: [
+        CategoriesFeaturedComponent,
+        MockComponents()
+      ],
       providers: [{
         provide: CategoriesService,
         useClass: CategoriesServiceMock
@@ -38,7 +37,7 @@ describe('CategoriesFeaturedComponent', () => {
     // Código
     // const fixture = TestBed.createComponent(CategoriesFeaturedComponent);
     // fixture.detectChanges();
-    
+
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h2').textContent).toContain('Categorias em Destaque');
   });
@@ -56,10 +55,6 @@ describe('CategoriesFeaturedComponent', () => {
     const result = html.getElementsByClassName('category-item')[0].textContent;
     console.log(result)
     expect(result).toContain("Ração");
-    
-  
-    
   });
-
 
 });
