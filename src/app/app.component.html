@@ -9,9 +9,11 @@
         <mat-icon> close</mat-icon>
       </button>
     </mat-toolbar>
-    <p>
-      Menu ira ficar aqui
-    </p>
+    <div *ngFor="let menu of menus" class="container grid menu">
+      <button class="menu-button" mat-button (click)="showPage(menu.router,sidenav)">
+        {{menu.name}}
+      </button>
+    </div>
   </mat-sidenav>
 
   <!-- Content aonde ira ficar todo o html da pagina -->
@@ -29,7 +31,6 @@
 
     <!-- Router outlet que ira renderizar as paginas -->
     <router-outlet></router-outlet>
-    
     <section class="footer">
       <app-footer></app-footer>
     </section>

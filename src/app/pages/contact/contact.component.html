@@ -1,0 +1,46 @@
+<div class="container grid">
+    <div class="col-12">
+        <form class="contact-form" [formGroup]="formGroup">
+            <h1 class="title">Contato</h1>
+            <mat-form-field class="name" appearance="fill">
+                <mat-label> Name</mat-label>
+                <input matInput placeholder="name" formControlName="name">
+                <mat-error *ngIf="formGroup.get('name').hasError('required')">O nome é obrigatório</mat-error>
+                <mat-error
+                    *ngIf="formGroup.get('name').hasError('minlength') || formGroup.get('name').hasError('maxlength')">
+                    Nome inválido
+                </mat-error>
+
+            </mat-form-field>
+            <br>
+            <mat-form-field class="email" appearance="fill">
+                <mat-label> Email</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+                <mat-error *ngIf="formGroup.get('email').hasError('required')"> O email é obrigatório</mat-error>
+                <mat-error
+                    *ngIf="formGroup.get('email').hasError('email') || formGroup.get('email').hasError('pattern')">
+                    Email inválido
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="phone" appearance="fill">
+                <mat-label> Phone</mat-label>
+                <input matInput placeholder="Phone" formControlName="phone">
+                <mat-error *ngIf="formGroup.get('phone').hasError('required')"> O telefone é obrigatório</mat-error>
+                <mat-error
+                    *ngIf="formGroup.get('email').hasError('phone') || formGroup.get('phone').hasError('pattern')">
+                    Telefone inválido
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="message" appearance="fill">
+                <mat-label>Message</mat-label>
+                <textarea matInput placeholder="Message" formControlName="message"></textarea>
+                <mat-error *ngIf="formGroup.get('message').hasError('required')"> A mensagem é obrigatória</mat-error>
+            </mat-form-field>
+            <button mat-stroked-button  (click)="sendForm()"> Enviar</button>
+        </form>
+        
+    </div>
+
+</div>
