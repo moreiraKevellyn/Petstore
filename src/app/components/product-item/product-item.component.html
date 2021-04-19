@@ -1,5 +1,5 @@
-    <div>
-        <mat-card class="productDestaque" role="group">
+
+        <mat-card class="productDestaque" [routerLink]="['/product', product.id]">
             <img mat-card-image src="{{product.featured_image}}">
             <mat-card-title class="name-product">
                 {{product.name}}
@@ -26,11 +26,10 @@
                         currency:"BRL"}}
                     </div>
 
-                    <div>{{productInstallment}}</div>
+                    <div class="installment">{{productInstallment}}</div>
 
                 </div>
 
             </mat-card-content>
 
         </mat-card>
-    </div>

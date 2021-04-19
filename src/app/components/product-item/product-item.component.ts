@@ -13,10 +13,9 @@ export class ProductItemComponent implements OnInit {
 
   constructor() {
   }
-
   ngOnInit(): void {
     if (this.product.installment_available) {
-      let productValue = this.product.promotional_value ? this.product.promotional_value : this.product.value
+      let productValue = this.product.value
       let installmentValue = (productValue / this.product.installment_count).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       this.productInstallment = `${this.product.installment_count}x ${installmentValue}`
     }

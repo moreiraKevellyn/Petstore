@@ -1,0 +1,38 @@
+<mat-card class="footer-card">
+    <div class="container grid">
+        <img class="footer-img" src="https://img.freepik.com/vetores-gratis/petshop-com-gato-e-cachorro_9645-763.jpg"
+            alt="">
+        <div class="row">
+            <div class="col-8 col-sm-6 col-md-8 col-lg-9">
+                <span class="material-icons icon-cell"> </span>
+                <i>{{parameters?.address}} - {{parameters?.address_complement}}</i>
+                <i style="display: block;">{{parameters?.zip_code}} - {{parameters?.city}}</i>
+                <span class="material-icons icon-cell">phone</span>
+                <i class="fone">{{parameters?.phones[0].country_code}} {{parameters?.phones[0].number}} </i>
+                <img class="icon-cell" src="https://imobzi.storage.googleapis.com/image/redes-sociais/whatsapp_gray.svg"
+                    alt="">
+                <i class="fone" >{{parameters?.phones[1].country_code}} {{parameters?.phones[1].number}} </i>
+            </div>
+
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <p>Siga-nos nas Redes Socias</p>
+                <a class ="redeSocial"href="{{Facebook}}{{parameters?.social_networks[0].account}}">
+                    <img class="img-social" src="{{facebook}}" alt="">
+                </a>
+                <a class ="redeSocial"href="{{LinkedIn}}{{parameters?.social_networks[1].account}}}">
+                    <img class="img-social" src="{{linkedin}}" alt="">
+                </a>
+                <a class ="redeSocial"href="{{Youtube}}{{parameters?.social_networks[2].account}}}">
+                    <img class="img-social" src="{{youtube}}" alt="">
+                </a>
+                <a class ="redeSocial"href="{{Instagram}}{{parameters?.social_networks[3].account}}}">
+                    <img class="img-social" src="{{instagram}}" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="trademark">
+            @{{parameters?.trademark}}
+        </div>
+    </div>
+</mat-card>

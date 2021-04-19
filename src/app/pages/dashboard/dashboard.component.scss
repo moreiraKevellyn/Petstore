@@ -1,7 +1,21 @@
 .banner-container img{
-    padding: 10px;
-    max-width: 100%;
+
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
+
+.banner-container {
+    margin-top: 10px;
+}
+
+.product-dashboard {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+
+
+

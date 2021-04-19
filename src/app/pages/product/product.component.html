@@ -1,0 +1,77 @@
+<div class="Breadcrumb">
+    <ul class="Breadcrumb">
+        <li> dashboard</li>
+        <li>{{product?.animal_type}}</li>
+        <li>{{product?.category}}</li>
+        <li>{{product?.name}}</li>
+    </ul>
+
+
+</div>
+
+<section class="container product-container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <swiper [config]="swiperConfig" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <ng-container *ngFor="let image of product?.images">
+                        <div class="swiper-slide">
+                            <img [src]="image">
+                        </div>
+                    </ng-container>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </swiper>
+        </div>
+
+        <div class="product-detail col-12 col-sm-12 col-md-5 col-lg-5">
+            <h2 class="product-detail-name">{{product?.name}}</h2>
+            <div class="star">
+                <div class="icon"> 
+                    <mat-card-content class="card-content">
+                        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                            <mat-icon class="star-icon">
+                                <!--ela cheia -->
+                                <ng-container *ngIf="product?.rating_stars >= star">star</ng-container>
+                                <!--meia estrela -->
+                                <ng-container *ngIf="star - product?.rating_stars == 0.5">star_half</ng-container>
+                                <!--estrela vazia -->
+                                <ng-container *ngIf="star - product?.rating_stars > 0.5">star_border</ng-container>
+                            </mat-icon>
+                        </ng-container>
+                        <span class="rating-count">({{product?.rating_count}})</span>
+                    </mat-card-content>
+                </div>
+                    
+            </div>
+            <span>{{product?.description}}</span>
+        </div>
+
+        <div class="product-prices col-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="price-container">
+                <div class="value-without-promotional col-md-12" *ngIf="product?.promotional_value">
+                    <small>{{product?.value |currency:"BRL"}}</small>
+                </div>
+
+                <div class="price-promotional-value col-6 col-sm-6 col-md-6 col-lg-6" *ngIf="product?.promotional_value">
+                    {{product?.promotional_value |currency:"BRL"}}
+                </div>
+
+                <div class="subscribers col-6 col-sm-6 col-md-6 col-lg-6" *ngIf="product?.promotional_value">
+                   <span>Para assinantes</span> 
+                </div>
+
+            </div>
+
+            <div class="price-container">
+                <div class="price col-6 col-sm-6 col-md-6 col-lg-6"> {{product?.value |currency:"BRL"}}</div>
+                <div class="installment col-6 col-sm-6 col-md-6 col-lg-6" *ngIf = "product?.installment_count > 0">ou até {{installmentPrice()}}</div>
+            </div>
+
+            <button mat-raised-button color="primary">ADICIONAR AO CARRINHO</button>
+            <button mat-raised-button color="accent">ASSINAR PRODUTO</button>
+        </div>
+
+    </div>
+</section>

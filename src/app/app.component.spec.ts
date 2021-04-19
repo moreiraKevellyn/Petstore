@@ -6,6 +6,7 @@ import { MatSidenavContainer, MatSidenav, MatSidenavContent } from '@angular/mat
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing'
+import { FooterComponent } from './components/footer/footer.component';
 
 
 describe('AppComponent', () => {
@@ -23,6 +24,7 @@ describe('AppComponent', () => {
           MatToolbar,
           MatSidenavContainer,
           MatSidenavContent,
+          FooterComponent
         )
       ],
 

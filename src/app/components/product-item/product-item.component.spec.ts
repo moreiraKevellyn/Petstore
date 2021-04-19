@@ -6,6 +6,8 @@ import { ProductItemComponent } from './product-item.component';
 import { AnimalType, Product } from 'src/app/interfaces/product';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import {MatCard, MatCardContent, MatCardModule, MatCardTitle} from '@angular/material/card'
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 const product: Product = {
 
@@ -36,12 +38,13 @@ describe('ProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [ProductItemComponent,
         MockComponents(
           MatCard,
           MatCardTitle,
           MatCardContent,
-          MatIcon
+          MatIcon,
         ),
       ],
       providers: [{

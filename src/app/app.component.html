@@ -4,30 +4,35 @@
   <!--Vamos utilizar o mat sidenav com o tipo over e dentro dele ira ficar todo o código do menu que ira aparecer na lateral
   // Container referente ao menu que ira aparecer na lateral -->
   <mat-sidenav #sidenav mode="over">
-    <mat-toolbar color = "primary">
+    <mat-toolbar color="primary">
       <button mat icon-button aria-label class="close" (click)="sidenav.toggle()" color="primary">
         <mat-icon> close</mat-icon>
       </button>
-    </mat-toolbar>    
-   <p>
+    </mat-toolbar>
+    <p>
       Menu ira ficar aqui
     </p>
   </mat-sidenav>
 
   <!-- Content aonde ira ficar todo o html da pagina -->
   <mat-sidenav-content>
-    
-      <mat-toolbar color="primary">
-        <button mat-icon-button aria-label="Menu" class="header-button" (click)="sidenav.toggle()" color= "primary">
-          <mat-icon>menu</mat-icon>
-       </button>
-        <span>Petstore</span>
-      </mat-toolbar>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button aria-label="Menu" class="header-button" (click)="sidenav.toggle()" color="primary">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span [routerLink]="['/']">Petstore</span>
+    </mat-toolbar>
 
 
     <!-- Botão para abrir e fechar o menu -->
 
     <!-- Router outlet que ira renderizar as paginas -->
     <router-outlet></router-outlet>
+    
+    <section class="footer">
+      <app-footer></app-footer>
+    </section>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
