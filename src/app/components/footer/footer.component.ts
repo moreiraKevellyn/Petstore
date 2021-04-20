@@ -32,7 +32,7 @@ export class FooterComponent implements OnInit {
     this.parametersService.getParameters()
       .subscribe(response => {
         this.parameters = response;
-        console.log(this.parameters.address);
+        //console.log(this.parameters.address);
       });
   }
 

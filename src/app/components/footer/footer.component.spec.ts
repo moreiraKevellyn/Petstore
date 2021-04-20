@@ -38,19 +38,19 @@ describe('FooterComponent', () => {
 
   it('should check social network logo', () => {
    const img = fixture.debugElement.nativeElement.querySelector(".img-social");
-   console.log(img)
+   //console.log(img)
    expect(img['src']).toContain('https://imobzi.storage.googleapis.com/image/redes-sociais/facebook_gray.svg');
 });
 
 it('should check phone format ', () => {
   const fone = fixture.nativeElement.getElementsByClassName("fone")[0].textContent;
-  console.log(fone)
+  //console.log(fone)
   expect(fone).toContain('+55 (11) 4063-4100');
 });
 
 it('should check trademark', () => {
   const trademark = fixture.nativeElement.querySelector(".trademark").textContent
-  console.log(trademark)
+  //console.log(trademark)
   expect(trademark).toContain('@Petstore');
 });
 

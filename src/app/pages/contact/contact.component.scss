@@ -4,3 +4,25 @@
     margin: auto;
     padding-top: 30px;
 }
+
+.title {
+    margin-left: 5px;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.mat-stroked-button {
+    background: transparent;
+    border: none;
+}
+
+mat-form-field {
+    margin-bottom: 5px;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md,
+    .container-sm, .container-xl {
+    max-width: 1140px;
+    }
+}

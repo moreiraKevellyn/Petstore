@@ -14,12 +14,13 @@ mat-toolbar{
 .close{
     position: absolute;
     left: 240px;
-    top: 10px;
-    font-size: 1.1rem;
+    //top: 10px;
+    //font-size: 1.1rem;
     border: none;
     background: none;
     outline: none;
     color: white;
+    fill: currentColor;
     
 }
 
@@ -28,4 +29,12 @@ mat-toolbar{
     background: none;
     color: white;
     outline: none;
+}
+
+.menu {
+    padding-top: 10px;
+}
+
+.menu-button {
+    width: 100%;
 }

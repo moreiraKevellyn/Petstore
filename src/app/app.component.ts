@@ -11,7 +11,9 @@ export class AppComponent {
   title = 'Petstore';
   menus = [
     { 'name': 'Home', 'router': '/' },
-    { 'name': 'Contato', 'router': '/contact' }
+    {'name': 'Produtos', 'router': '/products'},
+    { 'name': 'Contato', 'router': '/contact' },
+    
   ];
   constructor(private router: Router,  private route: ActivatedRoute) {
     

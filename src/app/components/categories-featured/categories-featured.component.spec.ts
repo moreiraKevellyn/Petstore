@@ -53,7 +53,7 @@ describe('CategoriesFeaturedComponent', () => {
     fixture.detectChanges();
     const html = fixture.nativeElement;
     const result = html.getElementsByClassName('category-item')[0].textContent;
-    console.log(result)
+    //console.log(result)
     expect(result).toContain("Ração");
   });
 

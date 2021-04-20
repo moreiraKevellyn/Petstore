@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { ProductsHighlights } from '../interfaces/products-highlights';
-import { Product } from '../interfaces/product';
+import { Product, ProductsGetResponse } from '../interfaces/product';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class ProductsService {
   getProductsHighlights(): Observable<Product[]> {
     return new Observable<Product[]>(observer => {
       // Faça o importe do environment para poder adicionar a url da aplicação
-      console.log(`${environment.apiUrl}v1/products-highlights`);
+     //console.log(`${environment.apiUrl}v1/products-highlights`);
 
       this.http.get<Product[]>(`${environment.apiUrl}v1/products-highlights`).subscribe(
         response => {
@@ -43,6 +43,21 @@ export class ProductsService {
         }
       )
     });
+  }
+
+  getProducts() {
+    return new Observable<ProductsGetResponse>(observer => {
+      this.http.get<ProductsGetResponse>(`${environment.apiUrl}v1/products`).subscribe(
+        products => {
+          observer.next(products);
+          observer.complete();
+        },
+        error => {
+          observer.next(error);
+          observer.complete();
+        }
+      )
+    })
   }
 
 }

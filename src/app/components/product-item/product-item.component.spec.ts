@@ -81,7 +81,7 @@ describe('ProductItemComponent', () => {
    it('should check  first item in HTML', () => {
     const html = fixture.nativeElement;
     const result = html.getElementsByClassName('name-product')[0].textContent;
-    console.log(result)
+    //console.log(result)
     expect(result).toContain("Antipulgas e Carrapatos MSD Bravecto para C\u00e3es de 4,5 a 10 Kg");
   });
 
@@ -89,7 +89,7 @@ describe('ProductItemComponent', () => {
     const html = fixture.nativeElement;
     const resultOriginal = html.getElementsByClassName('classeB')[0].textContent;
     const resultPromotional = html.getElementsByClassName('classeA')[0].textContent;
-    console.log(resultOriginal)
+    //console.log(resultOriginal)
     expect(resultOriginal).toContain("204.9");
     expect(resultPromotional).toContain("184.41");
   });
